@@ -16,11 +16,11 @@ function getLang(callback) {
 }
 
 function getRef(url) {
+    // if the url contains no subdomains
     if (url.split('.').length === 2) {
-        return url.split('.')[0].split('//')[1];
-    }
-    else {
-        return url.split('.')[1];
+        return url.split('.')[0].split('//')[1];  //get the first part without "http://"
+    } else {
+        return url.split('.')[1];  //get the second part
     }
 }
 
@@ -29,8 +29,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         var ref = getRef(url)
         var url = encodeURIComponent(url);
         getLang(function(lang) {
-            finalUrl = "https://dev.getnative.me?ref="+ref+"&lang="+lang+"&url="+url;
-            chrome.tabs.create({url: finalUrl});
+            finalUrl = "https://dev.getnative.me?ref=" + ref + "&lang=" + lang + "&url=" + url;
+            chrome.tabs.create({
+                url: finalUrl
+            });
         });
     });
 });
