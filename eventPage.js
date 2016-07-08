@@ -29,7 +29,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         var ref = getRef(url)
         var url = encodeURIComponent(url);
         getLang(function(lang) {
-            finalUrl = "https://dev.getnative.me?ref="+ref+"&lang="+lang+"&url="+url;
+            finalUrl = "https://dev.getnative.me?ref="+ref+"&lang="+lang+"&url="+url+"&splitMode=1";
             chrome.tabs.create({url: finalUrl});
         });
     });
