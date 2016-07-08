@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Native",
-  "description": "Add articles to Native",
-  "version": "1.0",
+  "description": "Import articles to Native and split by paragraph",
+  "version": "1.0.1",
 
   "background": {
     "scripts": ["eventPage.js"],
@@ -12,7 +12,7 @@
 
   "browser_action": {
     "default_icon": "icon.png",
-    "default_title": "Add to Native"
+    "default_title": "Importing to Native..."
   },
   "permissions": [
     "tabs",
