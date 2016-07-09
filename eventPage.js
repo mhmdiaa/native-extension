@@ -17,7 +17,7 @@ function getLang(callback) {
 
 chrome.browserAction.onClicked.addListener(function(tab) {
     getCurrentURL(function(url) {
-        var ref = url.replace(/^https?\:\/\//i, "").replace(".", "");
+        var ref = url.replace(/^https?\:\/\//i, "").replace(/\./g, "");
         var url = encodeURIComponent(url);
         getLang(function(lang) {
             finalUrl = "https://dev.getnative.me?ref=" + ref + "&lang=" + lang + "&url=" + url;
